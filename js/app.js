@@ -1,14 +1,7 @@
 function agregarTarjetasALaGaleria() {
-    console.log('La función se está ejecutando.');
-
-    // Resto del código...
-}
-
-function agregarTarjetasALaGaleria() {
     // Obtén el contenedor de la galería
     var galeria = document.querySelector('.galeria');
 
-    // Ejemplo de datos de productos (puedes obtener estos datos de una API o de otra fuente)
     var productos = [
         {
             imagen: './assets/fotos/productos/SG845128-1.jpg',
@@ -31,20 +24,20 @@ function agregarTarjetasALaGaleria() {
             oferta: '10% OFF',
             descripcion: 'Llevá tu juego a otro nivel con la Pelota Básquet Spalding Varsity número 7.'
         },
-
-        // Agrega más productos según sea necesario
+        {
+            imagen: './assets/fotos/productos/SG845128-1.jpg',
+            titulo: 'pelota agregada con js 4',
+            precio: '$100.000.000,00',
+            oferta: '10% OFF',
+            descripcion: 'Llevá tu juego a otro nivel con la Pelota Básquet Spalding Varsity número 7.'
+        },
     ];
-
-    // Itera sobre la lista de productos y crea una tarjeta para cada uno
     productos.forEach(function(producto) {
-        // Crea un elemento div para la tarjeta
         var tarjeta = document.createElement('div');
         tarjeta.classList.add('card');
         tarjeta.style.width = '18rem';
-
-        // Construye el contenido de la tarjeta con los datos del producto
         tarjeta.innerHTML = `
-            <img src="${producto.imagen}" class="d-block w-100" alt="...">
+            <img src="${producto.imagen}" class="img-product" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${producto.titulo}</h5>
                 <div class="producto-descripcion">
@@ -56,13 +49,34 @@ function agregarTarjetasALaGaleria() {
                 <a href="#" class="btn btn-primary">Agregar al carrito</a>
             </div>
         `;
-
-        // Agrega la tarjeta al contenedor de la galería
         galeria.appendChild(tarjeta);
     });
 }
 
-// Llama a la función cuando se carga la página
+function restringirNumeroDeLineas() {
+    var contenedores = document.querySelectorAll('.producto-descripcion p');
+    contenedores.forEach(function (contenedor) {
+        var lineHeight = parseInt(window.getComputedStyle(contenedor).lineHeight);
+        var maxHeight = lineHeight * 2;
+        while (contenedor.offsetHeight > maxHeight) {
+            contenedor.textContent = contenedor.textContent.replace(/\s+\S*$/, '...');
+        }
+    });
+}
+
+function restringirAlturaTitulo() {
+    var tarjetas = document.querySelectorAll('.card-title');
+    tarjetas.forEach(function(titulo) {
+        var alturaMaxima = 1.5 * parseFloat(getComputedStyle(titulo).lineHeight);
+        titulo.style.maxHeight = alturaMaxima + 'px';
+        titulo.style.overflow = 'hidden';
+        titulo.style.textOverflow = 'ellipsis';
+        titulo.style.whiteSpace = 'nowrap';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     agregarTarjetasALaGaleria();
+    restringirNumeroDeLineas();
+    restringirAlturaTitulo();
 });
