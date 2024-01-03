@@ -89,10 +89,6 @@ h1 {
     margin: auto;
 }
 
-.producto-accion{
-    
-}
-
 .oferta {
     color: green;
 }
@@ -111,4 +107,18 @@ body {
         padding: 2%; 
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .galeria {
+        padding: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra los elementos en lugar de justificarlos */
+    }
+
+    .card {
+        width: 100%; /* O ajusta según sea necesario */
+    }
+}
+
 
