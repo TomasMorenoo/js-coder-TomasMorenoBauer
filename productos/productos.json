@@ -1,0 +1,38 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "name": "Pack x3 medias Nike",
+      "image": "assets/fotos/productos/medias1.jpg",
+      "image2": "assets/fotos/productos/medias2.jpg",
+      "image3": "assets/fotos/productos/medias3.jpeg",
+      "priceSecundary": "$9025,00",
+      "details": "Medias de algodon. disponibles en blanco, negro y blanco. importadas de Nike directo a la comodidad de tus pies ¿te las vas a perder? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique impedit molestiae laboriosam suscipit doloremque iure! Expedita rem quo libero unde incidunt commodi nesciunt placeat at molestias! Enim, aliquid, quasi voluptates nemo, magnam distinctio nesciunt nam quis corporis unde fuga? Quos, in voluptatem architecto consectetur iusto illo, impedit quod atque facere voluptates molestias laboriosam ipsam, a magnam libero delectus. Doloribus quasi reiciendis soluta odit deserunt hic tempore vel ducimus voluptas. Adipisci, corrupti rem. Ut perferendis numquam laboriosam incidunt quisquam dolores debitis. Molestias inventore ducimus repellat doloribus quis, beatae quo numquam odio dolore magni. Obcaecati tenetur atque, consectetur ipsum veritatis sed iusto delectus! Error magni molestiae deserunt cum earum id totam inventore ipsa? Harum blanditiis dolore cum. Eaque tempore tempora eius odit. Deleniti ullam at nam aut, repellendus et veritatis sit tempora ipsum. Dolores sapiente neque a, culpa doloremque voluptates tempora aliquam, rerum debitis, dolorum veritatis soluta! Et hic corrupti commodi? Autem, alias dolor provident excepturi perferendis fugit? Provident, ut deserunt obcaecati mollitia consequatur aspernatur nobis unde a molestias enim expedita quae atque explicabo ea. Totam officiis qui aliquid labore dolore saepe, veritatis voluptas tempore nam quia explicabo, odit laudantium error, cupiditate vero molestiae nemo debitis earum laborum fuga! Quod, animi cum! ",
+      "pricePrincipal": "$9.500,00",
+      "porcentaje": "5% OFF"
+    },
+    {
+      "id": 2,
+      "name": "Reloj Inteligente",
+      "image": "https://example.com/reloj.jpg",
+      "price": "$99.99",
+      "details": "Reloj inteligente con funciones avanzadas."
+    },
+    {
+      "id": 3,
+      "name": "Auriculares Inalámbricos",
+      "image": "https://example.com/auriculares.jpg",
+      "price": "$29.99",
+      "details": "Auriculares inalámbricos con cancelación de ruido."
+    },
+    {
+      "id": 4,
+      "name": "Mochila para Portátil",
+      "image": "https://example.com/mochila.jpg",
+      "price": "$39.99",
+      "details": "Mochila resistente y espaciosa para tu portátil."
+    }
+
+  ]
+}
+

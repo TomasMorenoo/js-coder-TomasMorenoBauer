@@ -1,0 +1,32 @@
+{
+  "productos": [
+    {
+      "imagen": "./assets/fotos/productos/SG845128-1.jpg",
+      "titulo": "pelota agregada con js 1",
+      "precio": "$100.000.000,00",
+      "oferta": "10% OFF",
+      "descripcion": "Llevá tu juego a otro nivel con la Pelota Básquet Spalding Varsity número 7."
+    },
+    {
+      "imagen": "./assets/fotos/productos/SG845128-1.jpg",
+      "titulo": "pelota agregada con js 2",
+      "precio": "$100.000.000,00",
+      "oferta": "10% OFF",
+      "descripcion": "Llevá tu juego a otro nivel con la Pelota Básquet Spalding Varsity número 7."
+    },
+    {
+      "imagen": "./assets/fotos/productos/SG845128-1.jpg",
+      "titulo": "pelota agregada con js 3",
+      "precio": "$100.000.000,00",
+      "oferta": "10% OFF",
+      "descripcion": "Llevá tu juego a otro nivel con la Pelota Básquet Spalding Varsity número 7."
+    },
+    {
+      "imagen": "./assets/fotos/productos/SG845128-1.jpg",
+      "titulo": "pelota agregada con js 4",
+      "precio": "$100.000.000,00",
+      "oferta": "10% OFF",
+      "descripcion": "Llevá tu juego a otro nivel con la Pelota Básquet Spalding Varsity número 7."
+    }
+  ]
+}

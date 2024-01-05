@@ -35,7 +35,7 @@ function agregarTarjetasALaGaleria() {
     productos.forEach(function(producto) {
         var tarjeta = document.createElement('div');
         tarjeta.classList.add('card');
-        tarjeta.style.width = '18rem';
+        tarjeta.style.width = '16.5rem';
         tarjeta.innerHTML = `
             <img src="${producto.imagen}" class="img-product" alt="...">
             <div class="card-body">

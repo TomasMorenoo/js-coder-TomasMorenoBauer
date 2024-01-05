@@ -1,0 +1,64 @@
+#galeria-venta{
+    margin-top: 2em;
+}
+
+#product-name{
+    font-size: 3em;
+}
+
+#product-image, #product-image2, #product-image3{
+    width: 20em;;
+}
+
+#product-porcentaje{
+    color: #20ba5a;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+#product-priceSecundary{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#product-pricePrincipal{
+    margin: 0;
+    padding: 0;
+    text-decoration: line-through;
+    color: gray;
+}
+
+#metodoPago{
+    margin-bottom: 2em;
+}
+
+.precios{
+    display: flex;
+    align-items: center;
+    p#product-priceSecundary,p#product-porcentaje{
+        margin: 0 1rem 0 0;
+        padding: 0;
+    }
+}
+.info-venta{
+    width: 60%;
+    padding: 1em;
+    border-radius: 2em;
+    border: .01em solid lightgray;
+}
+
+.img-venta{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.descripcion{
+    display: block;
+    margin-top: 2em;
+    color: gray;
+}
+
+.botones{
+    
+}

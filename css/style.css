@@ -85,7 +85,7 @@ h1 {
     font-size: 1.5em; 
 }
 .img-product{
-    width: 17rem;
+    width: 15rem;
     margin: auto;
 }
 
@@ -120,5 +120,3 @@ body {
         width: 100%; /* O ajusta según sea necesario */
     }
 }
-
-
