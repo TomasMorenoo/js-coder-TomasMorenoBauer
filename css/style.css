@@ -77,8 +77,12 @@ h1 {
 }
 
 .card {
+    display: inline-flex;
     margin: auto;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    margin-right: .63rem;
+    margin-top: 1rem;
+    margin-left: .63rem;
 }
 
 .producto-precio {
@@ -119,4 +123,9 @@ body {
     .card {
         width: 100%; /* O ajusta según sea necesario */
     }
+}
+
+.card-title:hover {
+    text-decoration: underline;
+    cursor: pointer; 
 }
