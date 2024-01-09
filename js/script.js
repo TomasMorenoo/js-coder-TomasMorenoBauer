@@ -27,11 +27,32 @@ function generateProductGrid(products) {
 
         const productPrice = document.createElement('span');
         productPrice.classList.add('producto-precio');
-        productPrice.textContent = product.price;
+
+        if (product.oferta) {
+            const precioAnterior = document.createElement('span');
+            precioAnterior.classList.add('precio-anterior');
+            precioAnterior.textContent = product.precioAnterior;
+
+            productPrice.appendChild(precioAnterior);
+        }
+
+        // Agregar el precio actual al contenedor de precio
+        const precioActual = document.createElement('span');
+        precioActual.classList.add('precio-actual');
+        precioActual.textContent = product.price;
+
+        productPrice.appendChild(precioActual);
+
+
 
         const productOffer = document.createElement('span');
         productOffer.classList.add('oferta');
-        // Agregar lógica para la oferta si es necesario
+
+        if (product.oferta) {
+            productOffer.textContent = '¡Oferta!';
+        } else {
+            productOffer.textContent = ''; 
+        }
 
         const productDetails = document.createElement('p');
         productDetails.textContent = product.details;
@@ -63,14 +84,60 @@ function generateProductGrid(products) {
 }
 
 const products = [
-    { id: 1, name: 'Pack x3 medias surtidas Nike ', image: 'assets/fotos/productos/medias1.jpg', price: '$49.99', details: 'Zapatillas deportivas cómodas y elegantes.' },
-    { id: 2, name: 'Pelota adidas Al Rihla Pro', image: 'assets/fotos/productos/pelota.jpg', price: '$99.99', details: 'Reloj inteligente con funciones avanzadas.' },
-    { id: 3, name: 'Remera Urbana adidas Dream Doodle ', image: 'assets/fotos/productos/remera.jpg', price: '$49.99', details: 'Zapatillas deportivas cómodas y elegantes.' },
-    { id: 4, name: 'Pelota Básquet Spalding Varsity número 7', image: 'assets/fotos/productos/SG845128-1.jpg', price: '$99.99', details: 'Reloj inteligente con funciones avanzadas.' },
-    { id: 1, name: 'Pack x3 medias surtidas Nike', image: 'assets/fotos/productos/medias1.jpg', price: '$49.99', details: 'Zapatillas deportivas cómodas y elegantes.' },
-    { id: 2, name: 'Pelota adidas Al Rihla Pro', image: 'assets/fotos/productos/pelota.jpg', price: '$99.99', details: 'Reloj inteligente con funciones avanzadas.' },
-    { id: 3, name: 'Remera Urbana adidas Dream Doodle', image: 'assets/fotos/productos/remera.jpg', price: '$49.99', details: 'Zapatillas deportivas cómodas y elegantes.' },
-    { id: 4, name: 'Pelota Básquet Spalding Varsity número 7', image: 'assets/fotos/productos/SG845128-1.jpg', price: '$99.99', details: 'Reloj inteligente con funciones avanzadas.' },
+    { 
+    id: 1,
+    name: 'Pack x3 medias Nike ',
+    image: 'assets/fotos/productos/medias1.jpg',
+    precioAnterior: "$9.500,00",
+    price: '$9.025,00', 
+    oferta: true
+},
+    { id: 2,
+    name: 'Pelota adidas Al Rihla Pro', 
+    image: 'assets/fotos/productos/pelota.jpg', 
+    price: '$95.000,00',
+    oferta: false,
+    precioAnterior: ''
+},
+    { 
+    id: 3, 
+    name: 'Remera Urbana adidas Dream Doodle ', 
+    image: 'assets/fotos/productos/remera.jpg', 
+    price: '$42.999,00', 
+},
+    { 
+    id: 4, 
+    name: 'Pelota Básquet Spalding Varsity número 7', 
+    image: 'assets/fotos/productos/SG845128-1.jpg', 
+    price: '$38.399,00',
+},
+{ 
+    id: 1,
+    name: 'Pack x3 medias Nike ',
+    image: 'assets/fotos/productos/medias1.jpg',
+    price: '$9.025,00', 
+    oferta: true,
+    precioAnterior: '$9.500,00'
+},
+    { id: 2,
+    name: 'Pelota adidas Al Rihla Pro', 
+    image: 'assets/fotos/productos/pelota.jpg', 
+    price: '$95.000,00',
+    oferta: false
+},
+    { 
+    id: 3, 
+    name: 'Remera Urbana adidas Dream Doodle ', 
+    image: 'assets/fotos/productos/remera.jpg', 
+    price: '$42.999,00', 
+    oferta: true
+},
+    { 
+    id: 4, 
+    name: 'Pelota Básquet Spalding Varsity número 7', 
+    image: 'assets/fotos/productos/SG845128-1.jpg', 
+    price: '$38.399,00',  
+},
 ];
 
 generateProductGrid(products);

@@ -95,6 +95,9 @@ h1 {
 
 .oferta {
     color: green;
+    font-weight: bold;
+    margin-left: 0.3rem;
+    
 }
 
 body {
@@ -128,4 +131,23 @@ body {
 .card-title:hover {
     text-decoration: underline;
     cursor: pointer; 
+}
+
+.precio-anterior {
+    text-decoration: line-through;
+    color: lightgray; 
+    display: flex;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.producto-descripcion {
+    font-size: 14px; 
+    color: black; 
+    font-weight: bold;
+}
+
+.product-grid{
+    display: inline-flex;
+    align-items: stretch;
 }
