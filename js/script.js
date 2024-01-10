@@ -89,7 +89,7 @@ const products = [
     name: 'Pack x3 medias Nike ',
     image: 'assets/fotos/productos/medias1.jpg',
     precioAnterior: "$9.500,00",
-    price: '$9.025,00', 
+    price: '$9.025,00',
     oferta: true
 },
     { id: 2,
@@ -102,7 +102,7 @@ const products = [
     { 
     id: 3, 
     name: 'Remera Urbana adidas Dream Doodle ', 
-    image: 'assets/fotos/productos/remera.jpg', 
+    image: 'assets/fotos/productos/REMERA.JPG', 
     price: '$42.999,00', 
 },
     { 
