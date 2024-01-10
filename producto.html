@@ -116,7 +116,7 @@ async function loadProductDetails() {
         const productId = urlParams.get('id');
 
         // Realiza una solicitud para cargar el archivo JSON de productos
-        const response = await fetch('productos/productos.json');
+        const response = await fetch('json/productos.json');
         const data = await response.json();
         
         // Busca el producto con el ID correspondiente
