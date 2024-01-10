@@ -102,7 +102,7 @@ const products = [
     { 
     id: 3, 
     name: 'Remera Urbana adidas Dream Doodle ', 
-    image: 'assets/fotos/productos/REMERA.JPG', 
+    image: 'assets/fotos/productos/remera.jpg', 
     price: '$42.999,00', 
 },
     { 
