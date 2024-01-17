@@ -1,3 +1,98 @@
+let products = [
+    { 
+        id: 1,
+        name: 'Pack x3 medias Nike ',
+        image: 'assets/fotos/productos/medias1.jpg',
+        precioAnterior: "$9.500,00",
+        price: '$9.025,00',
+        oferta: true
+    },
+        { id: 2,
+        name: 'Pelota adidas Al Rihla Pro', 
+        image: 'assets/fotos/productos/pelota.jpg', 
+        price: '$95.000,00',
+        oferta: false,
+        precioAnterior: ''
+    },
+        { 
+        id: 3, 
+        name: 'Remera Urbana adidas Dream Doodle ', 
+        image: 'assets/fotos/productos/remera.jpg', 
+        price: '$42.999,00', 
+    },
+        { 
+        id: 4, 
+        name: 'Pelota Básquet Spalding Varsity número 7', 
+        image: 'assets/fotos/productos/SG845128-1.jpg', 
+        price: '$38.399,00',
+    },
+    { 
+        id: 1,
+        name: 'Pack x3 medias Nike ',
+        image: 'assets/fotos/productos/medias1.jpg',
+        price: '$9.025,00', 
+        oferta: true,
+        precioAnterior: '$9.500,00'
+    },
+        { id: 2,
+        name: 'Pelota adidas Al Rihla Pro', 
+        image: 'assets/fotos/productos/pelota.jpg', 
+        price: '$95.000,00',
+        oferta: false
+    },
+        { 
+        id: 3, 
+        name: 'Remera Urbana adidas Dream Doodle ', 
+        image: 'assets/fotos/productos/remera.jpg', 
+        price: '$42.999,00', 
+        oferta: true
+    },
+        { 
+        id: 4, 
+        name: 'Pelota Básquet Spalding Varsity número 7', 
+        image: 'assets/fotos/productos/SG845128-1.jpg', 
+        price: '$38.399,00',  
+    },
+];
+
+function agregarProducto(producto) {
+    products.push(producto);
+    guardarEnLocalStorage();
+    mostrarGaleria();
+}
+
+function guardarEnLocalStorage() {
+    localStorage.setItem('productos', JSON.stringify(products));
+}
+
+function obtenerProductos() {
+    const productosGuardados = localStorage.getItem('productos');
+    if (productosGuardados) {
+        products = JSON.parse(productosGuardados);
+    } else {
+        obtenerDesdeJSON();
+    }
+}
+
+async function obtenerDesdeJSON() {
+    try {
+        const response = await fetch('json/productos.json');
+        if (!response.ok) {
+            throw new Error('No se pudieron obtener los productos.');
+        }
+        const data = await response.json();
+        if (data && data.productos) {
+            products = data.productos;
+            guardarEnLocalStorage();
+            mostrarGaleria();
+        } else {
+            throw new Error('El formato del archivo JSON no es válido.');
+        }
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
 function generateProductGrid(products) {
     const productGrid = document.getElementById('product-grid');
 
@@ -83,61 +178,9 @@ function generateProductGrid(products) {
     });
 }
 
-const products = [
-{ 
-    id: 1,
-    name: 'Pack x3 medias Nike ',
-    image: 'assets/fotos/productos/medias1.jpg',
-    precioAnterior: "$9.500,00",
-    price: '$9.025,00',
-    oferta: true
-},
-    { id: 2,
-    name: 'Pelota adidas Al Rihla Pro', 
-    image: 'assets/fotos/productos/pelota.jpg', 
-    price: '$95.000,00',
-    oferta: false,
-    precioAnterior: ''
-},
-    { 
-    id: 3, 
-    name: 'Remera Urbana adidas Dream Doodle ', 
-    image: 'assets/fotos/productos/remera.jpg', 
-    price: '$42.999,00', 
-},
-    { 
-    id: 4, 
-    name: 'Pelota Básquet Spalding Varsity número 7', 
-    image: 'assets/fotos/productos/SG845128-1.jpg', 
-    price: '$38.399,00',
-},
-{ 
-    id: 1,
-    name: 'Pack x3 medias Nike ',
-    image: 'assets/fotos/productos/medias1.jpg',
-    price: '$9.025,00', 
-    oferta: true,
-    precioAnterior: '$9.500,00'
-},
-    { id: 2,
-    name: 'Pelota adidas Al Rihla Pro', 
-    image: 'assets/fotos/productos/pelota.jpg', 
-    price: '$95.000,00',
-    oferta: false
-},
-    { 
-    id: 3, 
-    name: 'Remera Urbana adidas Dream Doodle ', 
-    image: 'assets/fotos/productos/remera.jpg', 
-    price: '$42.999,00', 
-    oferta: true
-},
-    { 
-    id: 4, 
-    name: 'Pelota Básquet Spalding Varsity número 7', 
-    image: 'assets/fotos/productos/SG845128-1.jpg', 
-    price: '$38.399,00',  
-},
-];
+function mostrarGaleria() {
+    generateProductGrid(products);
+}
 
-generateProductGrid(products);
+obtenerProductos();
+mostrarGaleria();

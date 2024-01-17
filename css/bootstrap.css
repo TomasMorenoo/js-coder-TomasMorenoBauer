@@ -741,6 +741,9 @@ progress {
   --bs-gutter-y: 0;
   width: 100%;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
 
