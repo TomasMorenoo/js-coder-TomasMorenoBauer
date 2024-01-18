@@ -132,7 +132,6 @@ async function loadProductDetails() {
             document.getElementById('product-description').textContent = product.details;
             document.getElementById('product-priceSecundary').textContent = product.priceSecundary;
             document.getElementById('product-porcentaje').textContent = product.porcentaje;
-            // Actualiza más detalles según sea necesario
         } else {
             console.error('Producto no encontrado');
         }
@@ -141,7 +140,6 @@ async function loadProductDetails() {
     }
 }
 
-// Llama a la función para cargar detalles del producto al cargar la página
 loadProductDetails();
 
 </script>
