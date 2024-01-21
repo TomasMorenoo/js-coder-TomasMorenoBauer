@@ -1,97 +1,3 @@
-let products = [
-    { 
-        id: 1,
-        name: 'Pack x3 medias Nike ',
-        image: 'assets/fotos/productos/medias1.jpg',
-        precioAnterior: "$9.500,00",
-        price: '$9.025,00',
-        oferta: true
-    },
-        { id: 2,
-        name: 'Pelota adidas Al Rihla Pro', 
-        image: 'assets/fotos/productos/pelota.jpg', 
-        price: '$95.000,00',
-        oferta: false,
-        precioAnterior: ''
-    },
-        { 
-        id: 3, 
-        name: 'Remera Urbana adidas Dream Doodle ', 
-        image: 'assets/fotos/productos/remera.jpg', 
-        price: '$42.999,00', 
-    },
-        { 
-        id: 4, 
-        name: 'Pelota Básquet Spalding Varsity número 7', 
-        image: 'assets/fotos/productos/SG845128-1.jpg', 
-        price: '$38.399,00',
-    },
-    { 
-        id: 1,
-        name: 'Pack x3 medias Nike ',
-        image: 'assets/fotos/productos/medias1.jpg',
-        price: '$9.025,00', 
-        oferta: true,
-        precioAnterior: '$9.500,00'
-    },
-        { id: 2,
-        name: 'Pelota adidas Al Rihla Pro', 
-        image: 'assets/fotos/productos/pelota.jpg', 
-        price: '$95.000,00',
-        oferta: false
-    },
-        { 
-        id: 3, 
-        name: 'Remera Urbana adidas Dream Doodle ', 
-        image: 'assets/fotos/productos/remera.jpg', 
-        price: '$42.999,00', 
-        oferta: true
-    },
-        { 
-        id: 4, 
-        name: 'Pelota Básquet Spalding Varsity número 7', 
-        image: 'assets/fotos/productos/SG845128-1.jpg', 
-        price: '$38.399,00',  
-    },
-];
-
-function agregarProducto(producto) {
-    products.push(producto);
-    guardarEnLocalStorage();
-    mostrarGaleria();
-}
-
-function guardarEnLocalStorage() {
-    localStorage.setItem('productos', JSON.stringify(products));
-}
-
-function obtenerProductos() {
-    const productosGuardados = localStorage.getItem('productos');
-    if (productosGuardados) {
-        products = JSON.parse(productosGuardados);
-    } else {
-        obtenerDesdeJSON();
-    }
-}
-
-async function obtenerDesdeJSON() {
-    try {
-        const response = await fetch('json/productos.json');
-        if (!response.ok) {
-            throw new Error('No se pudieron obtener los productos.');
-        }
-        const data = await response.json();
-        if (data && data.productos) {
-            products = data.productos;
-            guardarEnLocalStorage();
-            mostrarGaleria();
-        } else {
-            throw new Error('El formato del archivo JSON no es válido.');
-        }
-    } catch (error) {
-        console.error(error.message);
-    }
-}
 
 function generateProductGrid(products) {
     const productGrid = document.getElementById('product-grid');
@@ -123,30 +29,22 @@ function generateProductGrid(products) {
         const productPrice = document.createElement('span');
         productPrice.classList.add('producto-precio');
 
-        if (product.oferta) {
+        if (product.pricePrincipal) {
             const precioAnterior = document.createElement('span');
             precioAnterior.classList.add('precio-anterior');
-            precioAnterior.textContent = product.precioAnterior;
-
+            precioAnterior.textContent = product.priceSecundary;
             productPrice.appendChild(precioAnterior);
-        }
 
-        // Agregar el precio actual al contenedor de precio
-        const precioActual = document.createElement('span');
-        precioActual.classList.add('precio-actual');
-        precioActual.textContent = product.price;
-
-        productPrice.appendChild(precioActual);
-
-
-
-        const productOffer = document.createElement('span');
-        productOffer.classList.add('oferta');
-
-        if (product.oferta) {
-            productOffer.textContent = '¡Oferta!';
-        } else {
-            productOffer.textContent = ''; 
+            const precioActual = document.createElement('span');
+            precioActual.classList.add('precio-actual');
+            precioActual.textContent = product.pricePrincipal || product.priceSecundary;
+            productPrice.appendChild(precioActual);
+        
+            const porcentajeDescuento = document.createElement('span');
+            porcentajeDescuento.classList.add('product-porcentaje');
+            porcentajeDescuento.textContent = product.porcentaje;
+            productPrice.appendChild(porcentajeDescuento);
+            
         }
 
         const productDetails = document.createElement('p');
@@ -163,7 +61,6 @@ function generateProductGrid(products) {
         addToCartButton.textContent = 'Agregar al carrito';
 
         productDescription.appendChild(productPrice);
-        productDescription.appendChild(productOffer);
         productDescription.appendChild(productDetails);
 
         cardBody.appendChild(productName);
@@ -178,9 +75,31 @@ function generateProductGrid(products) {
     });
 }
 
-function mostrarGaleria() {
-    generateProductGrid(products);
+function loadProductsFromLocalStorage() {
+    const storedProducts = localStorage.getItem('productos');
+    return storedProducts ? JSON.parse(storedProducts) : [];
 }
 
-obtenerProductos();
-mostrarGaleria();
+function saveProductsToLocalStorage(products) {
+    localStorage.setItem('productos', JSON.stringify(products));
+}
+
+function clearLocalStorage() {
+    localStorage.removeItem('productos');
+}
+
+fetch('json/productos.json')
+    .then(response => response.json())
+    .then(data => {
+        
+        const allProducts = [...loadProductsFromLocalStorage(), ...data.productos];
+
+        
+        generateProductGrid(allProducts);
+
+        
+        saveProductsToLocalStorage(allProducts);
+    })
+    .catch(error => console.error('Error al obtener productos:', error));
+
+window.addEventListener('beforeunload', clearLocalStorage);

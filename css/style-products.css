@@ -10,11 +10,6 @@
     width: 20em;;
 }
 
-#product-porcentaje{
-    color: #20ba5a;
-    vertical-align: middle;
-    font-weight: 500;
-}
 
 #product-priceSecundary{
     font-size: 2rem;
@@ -57,4 +52,20 @@
     display: block;
     margin-top: 2em;
     color: gray;
+}
+
+.product-porcentaje{
+    color: #20ba5a;
+    vertical-align: middle;
+    font-weight: 500;
+    margin-left: .5rem;
+    font-size: 1rem;
+
+}
+
+.product-cuotas{
+    font-size: .9rem;
+    display: block;
+    font-weight: 400;
+    color: green;
 }

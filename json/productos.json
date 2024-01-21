@@ -2,7 +2,7 @@
   "productos": [
     {
       "id": 1,
-      "name": "Pack x3 medias Nike",
+      "name": "Pack x3 de medias Nike multicolor",
       "image": "assets/fotos/productos/medias1.jpg",
       "image2": "assets/fotos/productos/medias2.jpg",
       "image3": "assets/fotos/productos/medias3.jpeg",
@@ -19,7 +19,7 @@
       "image3": "assets/fotos/productos/pelota4.jpg",
       "priceSecundary": "$95.000,00",
       "details":  "",
-      "pricePrincipal": "",
+      "pricePrincipal": "$150.000,00",
       "porcentaje": ""
     },
     {
@@ -28,13 +28,59 @@
       "image": "assets/fotos/productos/remera.jpg",
       "image2": "assets/fotos/productos/remera2.jpg",
       "image3": "assets/fotos/productos/remera3.jpg",
-      "priceSecundary": "$30.000",
+      "priceSecundary": "$45.000,00",
       "details":  "",
-      "pricePrincipal": "",
-      "porcentaje": "3 Cuotas sin interes de $10.000"
+      "pricePrincipal": "$30.000,00",
+      "cuotas": "3 Cuotas sin interes de $10.000",
+      "porcentaje": ""
     },
     {
       "id": 4,
+      "name": "Pelota Básquet Spalding Varsity número 7",
+      "image": "assets/fotos/productos/SG845128-1.jpg",
+      "image2": "assets/fotos/productos/SG845128-2.jpg",
+      "image3": "assets/fotos/productos/SG_84367-3.jpeg",
+      "priceSecundary": "$84.575,00",
+      "details":  "",
+      "pricePrincipal": "$99.500,00",
+      "porcentaje": "15% OFF"
+    },
+    {
+      "id": 5,
+      "name": "Pack x3 de medias Nike multicolor",
+      "image": "assets/fotos/productos/medias1.jpg",
+      "image2": "assets/fotos/productos/medias2.jpg",
+      "image3": "assets/fotos/productos/medias3.jpeg",
+      "priceSecundary": "$9025,00",
+      "details":  "",
+      "pricePrincipal": "$9.500,00",
+      "porcentaje": "5% OFF"
+    },
+    {
+      "id": 6,
+      "name": "Pelota adidas Al Rihla Pro",
+      "image": "assets/fotos/productos/pelota.jpg",
+      "image2": "assets/fotos/productos/pelota3.jpg",
+      "image3": "assets/fotos/productos/pelota4.jpg",
+      "priceSecundary": "$95.000,00",
+      "details":  "",
+      "pricePrincipal": "$150.000,00",
+      "porcentaje": ""
+    },
+    {
+      "id": 7,
+      "name": "Remera Urbana adidas Dream Doodle",
+      "image": "assets/fotos/productos/remera.jpg",
+      "image2": "assets/fotos/productos/remera2.jpg",
+      "image3": "assets/fotos/productos/remera3.jpg",
+      "priceSecundary": "$45.000,00",
+      "details":  "",
+      "pricePrincipal": "$30.000,00",
+      "cuotas": "3 Cuotas sin interes de $10.000",
+      "porcentaje": ""
+    },
+    {
+      "id": 8,
       "name": "Pelota Básquet Spalding Varsity número 7",
       "image": "assets/fotos/productos/SG845128-1.jpg",
       "image2": "assets/fotos/productos/SG845128-2.jpg",
@@ -44,7 +90,6 @@
       "pricePrincipal": "$9.500,00",
       "porcentaje": "5% OFF"
     }
-    
   ]
 }
 
